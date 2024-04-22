@@ -39,6 +39,15 @@ actorValoracion :: Persona -> Bool --revisar para mejorar
 actorValoracion actor =  valoracionPeliculaExito 3 ( ultimaActuacion actor ) && cantPeliculas ( actuaciones actor ) > 1
 
 recibiOscar :: Persona -> Bool
-recibiOscar actor = ( recibioOscar actor == True ) || esPeliculaPremiada (primerActuacion actor) 
+recibiOscar actor = recibioOscar actor || esPeliculaPremiada (primerActuacion actor) 
 
---seguir, lo hice con ayuda de apuntes
+actorExperiencia :: Persona -> Int -> Bool
+actorExperiencia actor cantPel = cantPeliculas ( actuaciones actor ) > cantPel
+
+-- La academia se rectifica
+
+sacarOscar :: Persona -> Persona --se crea una nueva Persona ya que no se actualizan las estructuras en haskell
+sacarOscar actor = actor {recibioOscar = False} --se crea una nueva persona con recibioOscar modificado
+
+--Segundas Partes
+
