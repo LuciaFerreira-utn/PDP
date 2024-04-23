@@ -51,3 +51,6 @@ sacarOscar actor = actor {recibioOscar = False} --se crea una nueva persona con 
 
 --Segundas Partes
 
+--comentario de prueba
+agregarSaludo :: String -> String
+agregarSaludo saludo = "Hola " ++ saludo
